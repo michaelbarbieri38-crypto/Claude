@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Obsidian Clipper</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Obsidian Clipper</h1>
+    </header>
+
+    <main>
+      <div class="page-info">
+        <label class="field-label">Page</label>
+        <p id="page-title" class="page-title">Loading…</p>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="folder-input">Folder</label>
+        <input
+          type="text"
+          id="folder-input"
+          class="text-input"
+          placeholder="Clippings"
+          autocomplete="off"
+          spellcheck="false"
+        />
+      </div>
+
+      <button id="clip-btn" class="primary-btn" disabled>
+        Save to Obsidian
+      </button>
+
+      <div id="status" class="status hidden" role="alert" aria-live="polite"></div>
+    </main>
+
+    <footer>
+      <a id="options-link" href="#" class="options-link">Settings</a>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+/* ── Reset & Base ────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+  font-size: 14px;
+  color: #1a1a1a;
+  background: #ffffff;
+  line-height: 1.5;
+}
+
+/* ── Popup layout ────────────────────────────────────────────── */
+.container {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+}
+
+header {
+  padding: 14px 16px 10px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+header h1 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #5c3ee8; /* Obsidian purple */
+  letter-spacing: -0.2px;
+}
+
+main {
+  flex: 1;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+footer {
+  padding: 8px 16px;
+  border-top: 1px solid #e8e8e8;
+  text-align: right;
+}
+
+/* ── Page info ───────────────────────────────────────────────── */
+.page-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.page-title {
+  font-size: 13px;
+  color: #444;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+/* ── Form fields ─────────────────────────────────────────────── */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.text-input {
+  width: 100%;
+  padding: 7px 10px;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  font-size: 13px;
+  font-family: inherit;
+  color: #1a1a1a;
+  background: #fafafa;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  outline: none;
+}
+
+.text-input:focus {
+  border-color: #5c3ee8;
+  box-shadow: 0 0 0 2px rgba(92, 62, 232, 0.15);
+  background: #fff;
+}
+
+.text-input::placeholder {
+  color: #aaa;
+}
+
+.field-hint {
+  font-size: 12px;
+  color: #888;
+  margin-top: 2px;
+}
+
+.field-hint code {
+  background: #f0f0f0;
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 11px;
+}
+
+/* ── Button ──────────────────────────────────────────────────── */
+.primary-btn {
+  width: 100%;
+  padding: 9px 16px;
+  background: #5c3ee8;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s, opacity 0.15s;
+}
+
+.primary-btn:hover:not(:disabled) {
+  background: #4b2fd4;
+}
+
+.primary-btn:active:not(:disabled) {
+  background: #3e27b8;
+}
+
+.primary-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ── Status messages ─────────────────────────────────────────── */
+.status {
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.status.hidden {
+  display: none;
+}
+
+.status-success {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border: 1px solid #c8e6c9;
+}
+
+.status-error {
+  background: #fdecea;
+  color: #b71c1c;
+  border: 1px solid #f5c6c6;
+}
+
+.status-warning {
+  background: #fff8e1;
+  color: #795548;
+  border: 1px solid #ffe082;
+}
+
+/* ── Footer link ─────────────────────────────────────────────── */
+.options-link {
+  font-size: 12px;
+  color: #888;
+  text-decoration: none;
+}
+
+.options-link:hover {
+  color: #5c3ee8;
+  text-decoration: underline;
+}
+
+/* ── Options page overrides ──────────────────────────────────── */
+.options-page {
+  background: #f5f5f5;
+  min-height: 100vh;
+}
+
+.options-container {
+  max-width: 560px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.options-container header {
+  padding: 24px 28px 18px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.options-container header h1 {
+  font-size: 20px;
+}
+
+.subtitle {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #666;
+}
+
+.subtitle a {
+  color: #5c3ee8;
+  text-decoration: none;
+}
+
+.subtitle a:hover {
+  text-decoration: underline;
+}
+
+.options-container main {
+  padding: 24px 28px;
+  gap: 18px;
+}
+
+.options-container .primary-btn {
+  width: auto;
+  padding: 9px 24px;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Obsidian Clipper – Settings</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="options-page">
+  <div class="options-container">
+    <header>
+      <h1>Obsidian Clipper Settings</h1>
+      <p class="subtitle">
+        Requires the
+        <a href="https://github.com/coddingtonbear/obsidian-local-rest-api" target="_blank" rel="noopener">
+          Obsidian Local REST API
+        </a>
+        plugin running on port 27123.
+      </p>
+    </header>
+
+    <main>
+      <div class="field-group">
+        <label class="field-label" for="api-key">API Key</label>
+        <input
+          type="password"
+          id="api-key"
+          class="text-input"
+          placeholder="Paste your API key here"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <p class="field-hint">
+          Find this in Obsidian → Settings → Local REST API → API Key.
+        </p>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="default-folder">Default Folder</label>
+        <input
+          type="text"
+          id="default-folder"
+          class="text-input"
+          placeholder="Clippings"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <p class="field-hint">
+          Folder path inside your vault where clips will be saved (e.g. <code>Clippings</code> or <code>Inbox/Web</code>).
+        </p>
+      </div>
+
+      <button id="save-btn" class="primary-btn">Save Settings</button>
+
+      <div id="status" class="status hidden" role="alert" aria-live="polite"></div>
+    </main>
+  </div>
+
+  <script src="options.js"></script>
+</body>
+</html>
