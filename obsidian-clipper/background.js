@@ -20,7 +20,7 @@ async function handleClip({ title, url, text, folder, apiKey }) {
 
   const noteContent = buildNote({ title, url, date, text });
 
-  const apiUrl = `http://localhost:27123/vault/${encodeURIComponent(safeFolder)}/${encodeURIComponent(filename)}`;
+  const apiUrl = `https://127.0.0.1:27124/vault/${encodeURIComponent(safeFolder)}/${encodeURIComponent(filename)}`;
 
   let response;
   try {
@@ -34,7 +34,7 @@ async function handleClip({ title, url, text, folder, apiKey }) {
     });
   } catch (networkErr) {
     throw new Error(
-      'Could not connect to Obsidian. Make sure Obsidian is open and the Local REST API plugin is running on port 27123.'
+      'Could not connect to Obsidian. Make sure Obsidian is open and the Local REST API plugin is running on port 27124.'
     );
   }
 

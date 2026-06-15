@@ -9,7 +9,7 @@
     "scripting"
   ],
   "host_permissions": [
-    "http://localhost:27123/*"
+    "https://127.0.0.1:27124/*"
   ],
   "background": {
     "service_worker": "background.js"
