@@ -55,8 +55,9 @@ Respond in this exact JSON format (no markdown, just raw JSON):
     messages: [{ role: "user", content: prompt }],
   });
 
-  const text =
+  const raw =
     response.content[0].type === "text" ? response.content[0].text : "";
+  const text = raw.replace(/^```(?:json)?\n?/m, "").replace(/```\s*$/m, "").trim();
   const parsed = JSON.parse(text);
 
   return {
@@ -112,8 +113,9 @@ If isOver is true, set outcome to a 2-3 sentence description of how history unfo
     messages: [{ role: "user", content: prompt }],
   });
 
-  const text =
+  const raw =
     response.content[0].type === "text" ? response.content[0].text : "";
+  const text = raw.replace(/^```(?:json)?\n?/m, "").replace(/```\s*$/m, "").trim();
   const parsed = JSON.parse(text);
 
   return {
